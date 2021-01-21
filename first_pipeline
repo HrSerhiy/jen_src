@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Hello1') {
             steps {
                 sh 'ssh sa@localhost'
                 sh 'ssh sa@localhost'
