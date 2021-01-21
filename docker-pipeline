@@ -8,7 +8,7 @@ pipeline {
                 sh 'echo \'Hello Wodsaf***\''
 		sh 'scp docker/Dockerfile sa@10.0.0.5:/project1/rocket'
 		sh 'scp docker/entrypoint.sh sa@10.0.0.5:/project1/rocket'
-		sh 'ssh sa@10.0.0.5 \'docker build -t myapp /project1/rocket && docker run -dp 3128:3128 myapp\''
+		sh 'ssh sa@10.0.0.5 \'docker build -t myapp /project1/rocket && docker run -d --restart=always --publish 3128:3128  --volume /srv/docker/squid/cache:/var/spool/squid  myapp\''
 /*		sh 'ssh sa@10.0.0.5 \'docker run --name squid -d --restart=always  --publish 3128:3128 --volume /srv/docker/squid/cache:/var/spool/squid sameersbn/squid:3.5.27-2\''
 */		}
         }
