@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+		echo "=========docker build on node1=======
+                sh 'echo \'Hello World\''
+		sh 'scp docker/Dockerfile sa@10.0.0.5:/tmp/Dockerfile'
+		sh 'ssh sa@10.0.0.5 \'docker build /tmp/Dockerfile\''
+            }
+        }
+    }
+}
