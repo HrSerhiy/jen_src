@@ -7,7 +7,7 @@ pipeline {
                 sh 'ssh sa@localhost'
                 sh 'ssh sa@localhost'
                 sh 'echo \'Hello World\''
-		sh 'ssh sa@10.0.0.5 \'hostname\'
+		sh 'ssh sa@10.0.0.5 \'hostname\''
             }
         }
     }
