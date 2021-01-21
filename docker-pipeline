@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
 		echo '=========docker build on node1======='
-                sh 'echo \'Hello World\''
+                sh 'echo \'Hello Wodsaf\''
 		sh 'scp docker/Dockerfile sa@10.0.0.5:/project1/rocket'
 		sh 'ssh sa@10.0.0.5 \'docker build /project1/rocket\''
             }
